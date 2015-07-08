@@ -13,7 +13,7 @@ You will see the test fail and you can look at the images in /lib/images/
 
 You can configure the above path in spec_helper.rb class.
 
-Future Todo:
+### Future Todo: ###
 
 * Integrate in Cucumber
 * Implement different scenarios for variety of examples.
