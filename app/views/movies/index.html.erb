@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Best Movies of All Time</h1>
+
+<table id='movies_table'>
+  <thead>
+    <tr>
+      <th width="70%">Title</th>
+      <th width="10%">Score</th>
+      <th width="10%">IMDB</th>
+      <th width="10%" colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @movies.each_with_index do |movie, index| %>
+      <tr class='<%= index%2 == 0 ? "even" : "odd" %>'>
+        <td><%= movie.title %></td>
+        <td><%= movie.score %></td>
+        <td><a href='<%= movie.imdb_link %>' target='_blank'>Visit</a></td>
+        <td><%= link_to 'Show', movie %></td>
+        <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
+        <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Movie', new_movie_path %>
